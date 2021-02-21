@@ -24,7 +24,12 @@ class _HomeState extends State<Home> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(Icons.add_box_outlined),
+            IconButton(
+              icon: Icon(Icons.camera_alt_outlined),
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/camera');
+              },
+            ),
             Text(
               'Instagram',
               style: GoogleFonts.lobsterTwo(
