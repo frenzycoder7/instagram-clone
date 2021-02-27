@@ -1,6 +1,10 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:instagram/Navigation/HomeNav.dart';
+import 'package:instagram/Navigation/SearchNav.dart';
+import 'package:instagram/Screens/ReelsScree.dart';
+import 'package:instagram/Screens/SearchScreen.dart';
+
 import 'package:instagram/Screens/TimelineScreen.dart';
 
 class Home extends StatefulWidget {
@@ -10,7 +14,20 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _themeChanger = 0;
-  List _themeList = [TimeLineScreen(), Text('Next')];
+  List _themeList = [
+    TimeLineScreen(),
+    SearchScreen(),
+    ReelsScreen(),
+    Text('Activities'),
+    Text('Profile')
+  ];
+  List _navList = [
+    HomeNav(),
+    SearchNav(),
+    Text('Reels'),
+    Text('Activities'),
+    Text('Profile'),
+  ];
   void _onItemTapped(int index) {
     setState(() {
       _themeChanger = index;
@@ -20,27 +37,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              icon: Icon(Icons.camera_alt_outlined),
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed('/camera');
-              },
-            ),
-            Text(
-              'Instagram',
-              style: GoogleFonts.lobsterTwo(
-                fontSize: 30,
-                fontWeight: FontWeight.w100,
-              ),
-            ),
-            Icon(Icons.message_outlined)
-          ],
-        ),
-      ),
+      appBar: AppBar(title: _navList[_themeChanger]),
       body: _themeList[_themeChanger],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,

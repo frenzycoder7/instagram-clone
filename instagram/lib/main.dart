@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/Database/Data/Data.dart';
-import 'package:instagram/Provider/CameraProvider.dart';
 import 'package:instagram/Provider/ThemeProvider.dart';
 import 'package:instagram/Screens/Camera.dart';
+import 'package:instagram/Screens/ChatManager.dart';
 import 'package:instagram/Screens/Home.dart';
 import 'package:instagram/Screens/Splash.dart';
 import 'package:instagram/Theme.dart';
@@ -33,9 +33,6 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (ctx) => Data(),
         ),
-        ChangeNotifierProvider(
-          create: (ctx) => CameraProvider(),
-        )
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themes, child) {
@@ -51,7 +48,8 @@ class MyApp extends StatelessWidget {
               '/home': (ctx) => Home(),
               '/camera': (ctx) => CameraScreen(
                     cameras: cameras,
-                  )
+                  ),
+              '/chat': (ctx) => ChatScreen()
             },
           );
         },
