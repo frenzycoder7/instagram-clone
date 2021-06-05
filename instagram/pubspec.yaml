@@ -32,25 +32,17 @@ dependencies:
   video_player: ^1.0.1
   intro_slider: ^2.3.4
   tiktoklikescroller: ^0.1.2
-  # image_gallery_grid_fb: ^1.0.1
+  image_gallery_grid_fb: ^1.0.1
   bottom_drawer: ^0.0.2
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.8.1
 
-
-flutter_icons:
-  ios: true
-  android: true
-  image_path_ios: "assets/launcher/icon.png"
-  image_path_android: "assets/launcher/icon.png"
-  # adaptive_icon_background: "assets/launcher/background.png"
-  # adaptive_icon_foreground: "assets/launcher/foreground.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

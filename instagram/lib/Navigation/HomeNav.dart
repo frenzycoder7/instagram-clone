@@ -8,7 +8,7 @@ class HomeNav extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          icon: Icon(Icons.camera_alt_outlined),
+          icon: Icon(Icons.camera_alt_outlined,color: Colors.black),
           onPressed: () {
             Navigator.of(context).pushReplacementNamed('/camera');
           },
@@ -18,10 +18,11 @@ class HomeNav extends StatelessWidget {
           style: GoogleFonts.lobsterTwo(
             fontSize: 30,
             fontWeight: FontWeight.w100,
+            color: Colors.black
           ),
         ),
         IconButton(
-          icon: Icon(Icons.message_outlined),
+          icon: Icon(Icons.message_outlined,color: Colors.black,),
           onPressed: () {
             Navigator.of(context).pushNamed('/chat');
           },

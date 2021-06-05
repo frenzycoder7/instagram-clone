@@ -61,13 +61,13 @@ class Timeline extends StatelessWidget {
                         margin: EdgeInsets.only(left: 10),
                         child: Text(
                           gName,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
                         ),
                       )
                     ],
                   ),
                 ),
-                Icon(Icons.more_vert)
+                Icon(Icons.more_vert,color: Colors.black,)
               ],
             ),
           ),
@@ -96,6 +96,7 @@ class Timeline extends StatelessWidget {
                         icon: Icon(
                           EvaIcons.heartOutline,
                           size: 30,
+                          color: Colors.black,
                         ),
                         onPressed: () {
                           print("Eva Icon heart Pressed");
@@ -105,6 +106,7 @@ class Timeline extends StatelessWidget {
                         icon: Icon(
                           EvaIcons.messageCircleOutline,
                           size: 30,
+                          color: Colors.black,
                         ),
                         onPressed: () {
                           print("Eva Icon heart Pressed");
@@ -114,6 +116,7 @@ class Timeline extends StatelessWidget {
                         icon: Icon(
                           Icons.send_outlined,
                           size: 30,
+                          color: Colors.black,
                         ),
                         onPressed: () {
                           print("Eva Icon heart Pressed");
@@ -126,6 +129,7 @@ class Timeline extends StatelessWidget {
                   child: Icon(
                     Icons.bookmark_border,
                     size: 30,
+                    color: Colors.black,
                   ),
                 )
               ],

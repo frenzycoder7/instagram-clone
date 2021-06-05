@@ -37,15 +37,18 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: _navList[_themeChanger]),
+      backgroundColor: Colors.white,
+      appBar: AppBar(title: _navList[_themeChanger],backgroundColor: Colors.white,),
       body: _themeList[_themeChanger],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
               size: 30,
+              color: Colors.black,
             ),
             label: '',
           ),
@@ -53,13 +56,16 @@ class _HomeState extends State<Home> {
             icon: Icon(
               Icons.search_outlined,
               size: 30,
+              color: Colors.black,
             ),
             label: 'Search',
           ),
           BottomNavigationBarItem(
+            
             icon: Icon(
               Icons.add_box_outlined,
               size: 30,
+              color: Colors.black,
             ),
             label: 'reels',
           ),
@@ -67,6 +73,7 @@ class _HomeState extends State<Home> {
             icon: Icon(
               EvaIcons.heartOutline,
               size: 30,
+              color: Colors.black,
             ),
             label: 'reels',
           ),
