@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 
 class CommentInput extends StatefulWidget {
-  CommentInput({Key key}) : super(key: key);
+  const CommentInput({Key? key}) : super(key: key);
 
   @override
   _CommentInputState createState() => _CommentInputState();
 }
 
 class _CommentInputState extends State<CommentInput> {
-  TextEditingController _controller;
+  late TextEditingController _controller;
 
+  @override
   void initState() {
     super.initState();
     _controller = TextEditingController();
   }
 
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -33,7 +36,7 @@ class _CommentInputState extends State<CommentInput> {
                   title: const Text('Thanks!'),
                   content: Text('You typed "$value".'),
                   actions: <Widget>[
-                    FlatButton(
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },

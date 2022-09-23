@@ -7,15 +7,15 @@ import 'package:instagram/Widget/ImagePreview.dart';
 
 class CameraScreen extends StatefulWidget {
   var cameras;
-  CameraScreen({this.cameras});
+  CameraScreen({super.key, this.cameras});
 
   @override
   _CameraScreenState createState() => _CameraScreenState();
 }
 
 class _CameraScreenState extends State<CameraScreen> {
-  CameraController controller;
-  XFile imageFile;
+  late CameraController controller;
+  late XFile imageFile;
   bool isRear = true;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -35,7 +35,7 @@ class _CameraScreenState extends State<CameraScreen> {
     });
   }
 
-  Future<XFile> takePicture() async {
+  Future<XFile?> takePicture() async {
     if (!controller.value.isInitialized) {
       showInSnackBar('Error: select a camera first.');
       return null;
@@ -57,11 +57,11 @@ class _CameraScreenState extends State<CameraScreen> {
   }
 
   void onTakePictureButtonPressed() {
-    takePicture().then((XFile file) {
+    takePicture().then((XFile? file) {
       if (mounted) {
         print(file);
         setState(() {
-          imageFile = file;
+          imageFile = file!;
         });
         if (file != null) showInSnackBar('Picture saved to ${file.path}');
       }
@@ -69,20 +69,21 @@ class _CameraScreenState extends State<CameraScreen> {
   }
 
   void _showCameraException(CameraException e) {
-    logError(e.code, e.description);
+    logError(e.code, e.description as String);
     showInSnackBar('Error: ${e.code}\n${e.description}');
   }
 
   void logError(String code, String message) =>
       print('Error: $code\nError Message: $message');
   void showInSnackBar(String message) {
-    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(message)));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
   void initState() {
     super.initState();
-    controller = new CameraController(
+    controller = CameraController(
         isRear ? widget.cameras[0] : widget.cameras[1], ResolutionPreset.low);
     controller.initialize().then((value) {
       if (!mounted) {
@@ -94,7 +95,7 @@ class _CameraScreenState extends State<CameraScreen> {
 
   @override
   void dispose() {
-    controller?.dispose();
+    controller.dispose();
     super.dispose();
   }
 

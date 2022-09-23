@@ -3,5 +3,5 @@ class StoryModel {
   String imageUrl;
   bool seen;
 
-  StoryModel({this.name, this.imageUrl, this.seen});
+  StoryModel({required this.name, required this.imageUrl, required this.seen});
 }

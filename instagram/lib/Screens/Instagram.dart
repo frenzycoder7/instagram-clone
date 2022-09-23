@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_gallery_grid_fb/image_gallery_grid_fb.dart';
 
 class Instagram extends StatefulWidget {
-  Instagram({Key key, this.title}) : super(key: key);
+  const Instagram({Key? key, required this.title}) : super(key: key);
 
   final String title;
 

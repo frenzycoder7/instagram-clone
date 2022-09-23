@@ -4,7 +4,7 @@ class StoryItem extends StatelessWidget {
   String name;
   String imageUrl;
   bool seen;
-  StoryItem({this.name, this.imageUrl, this.seen});
+  StoryItem({super.key, required this.name, required this.imageUrl, required this.seen});
   @override
   Widget build(BuildContext context) {
     print(name);

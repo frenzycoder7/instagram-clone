@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ImagePreview extends StatefulWidget {
   XFile file;
   CameraController controller;
-  ImagePreview({this.file, this.controller});
+  ImagePreview({super.key, required this.file, required this.controller});
 
   @override
   _ImagePreviewState createState() => _ImagePreviewState();
@@ -15,7 +15,7 @@ class _ImagePreviewState extends State<ImagePreview> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    widget.controller?.dispose();
+    widget.controller.dispose();
   }
 
   @override

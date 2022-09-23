@@ -10,14 +10,16 @@ class Timeline extends StatelessWidget {
   String nImage;
   String gCaption;
 
-  Timeline(
-      {this.gName,
-      this.gUrl,
-      this.nComment,
-      this.nLikes,
-      this.nImage,
-      this.nTime,
-      this.gCaption});
+  Timeline({
+    super.key,
+    required this.gName,
+    required this.gUrl,
+    required this.nComment,
+    required this.nLikes,
+    required this.nImage,
+    required this.nTime,
+    required this.gCaption,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +63,17 @@ class Timeline extends StatelessWidget {
                         margin: EdgeInsets.only(left: 10),
                         child: Text(
                           gName,
-                          style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                       )
                     ],
                   ),
                 ),
-                Icon(Icons.more_vert,color: Colors.black,)
+                Icon(
+                  Icons.more_vert,
+                  color: Colors.black,
+                )
               ],
             ),
           ),

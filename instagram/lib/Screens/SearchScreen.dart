@@ -5,7 +5,9 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: () {},
+      onRefresh: () async {
+        await Future.delayed(Duration(seconds: 2));
+      },
       child: Container(
         child: Column(
           children: [
